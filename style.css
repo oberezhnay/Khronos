@@ -1,0 +1,35 @@
+.header{
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+form{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    min-width: 300px;
+}
+input,select{
+    min-height: 30px;
+    margin: 10px;
+}
+input:invalid {
+    border: 1px solid rgb(255, 145, 0);
+  }
+  
+input:valid {
+  border: 1px solid black;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+}
+
