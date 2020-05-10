@@ -23,12 +23,14 @@ class KhronosDate {
     }
 
     getCurrentYearDays() {
-        return (this.month - 1) * 30 + this.day - 24;
+        return (this.month - 1) * 30 + this.day - 23;
     }
 
     getLeapYears() {
-        return this.get5YearsFrequency() + this.get500YearsFrequency() - this.get100YearsFrequency();
-    }
+        if ((this.month > 7)&&(this.month >=12)) {
+            return this.get5YearsFrequency() + this.get500YearsFrequency() - this.get100YearsFrequency();
+        } else return this.get5YearsFrequency() + this.get500YearsFrequency() - this.get100YearsFrequency()-1;
+        }
 
     get500YearsFrequency() {
         return Math.floor(this.year / 500);
