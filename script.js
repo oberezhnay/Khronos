@@ -51,11 +51,16 @@ const dayField = document.getElementById('day');
 /***** Acces to Feb.31 in case of leap year   *****/
 yearField.addEventListener('input', function () {
     dateForm.elements.month.disabled = 0;
+    dateForm.elements.month.value="";
+    dateForm.elements.day.value="";
 });
 monthField.addEventListener('change', function () {
+    let leapedOption=document.getElementById('leaped');
+    leapedOption.disabled = 1; 
     dateForm.elements.day.disabled = 0;
+    dateForm.elements.day.value="";
     if (isLeapYear(dateForm.elements.year.value) && (dateForm.elements.month.value == 7)) {
-        document.getElementById('leaped').disabled = 0;
+        leapedOption.disabled = 0;
     }
 });
 
